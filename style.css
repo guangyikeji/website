@@ -32,10 +32,10 @@
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     --shadow-blue: 0 10px 30px rgba(0, 51, 102, 0.2);
 
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 20px;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
 }
 
 body {
@@ -61,7 +61,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.3;
+    opacity: 0.15;
 }
 
 /* Typography */
@@ -92,8 +92,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
 }
 
 .btn-primary::before {
@@ -268,14 +268,15 @@ h1, h2, h3, h4, h5, h6 {
 .hero-badge {
     display: inline-flex;
     align-items: center;
-    padding: 8px 16px;
-    background: rgba(0, 51, 102, 0.1);
+    padding: 6px 16px;
+    background: rgba(0, 51, 102, 0.08);
     color: var(--primary-color);
-    border-radius: 20px;
-    font-size: 14px;
+    border-radius: 16px;
+    font-size: 13px;
     font-weight: 600;
     margin-bottom: 24px;
-    border: 1px solid rgba(0, 51, 102, 0.2);
+    border: 1px solid rgba(0, 51, 102, 0.15);
+    letter-spacing: 0.3px;
 }
 
 .hero-title {
@@ -362,37 +363,37 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     border-radius: 50%;
     background: var(--purple-gradient);
-    opacity: 0.1;
-    animation: float 6s ease-in-out infinite;
+    opacity: 0.03;
+    animation: subtleFloat 8s ease-in-out infinite;
 }
 
 .blob-1 {
-    width: 200px;
-    height: 200px;
-    top: 10%;
-    right: 20%;
+    width: 120px;
+    height: 120px;
+    top: 15%;
+    right: 25%;
     animation-delay: 0s;
 }
 
 .blob-2 {
-    width: 150px;
-    height: 150px;
-    bottom: 20%;
-    left: 10%;
-    animation-delay: 2s;
+    width: 80px;
+    height: 80px;
+    bottom: 25%;
+    left: 15%;
+    animation-delay: 3s;
 }
 
 .blob-3 {
-    width: 100px;
-    height: 100px;
-    top: 50%;
-    right: 5%;
-    animation-delay: 4s;
+    width: 60px;
+    height: 60px;
+    top: 60%;
+    right: 10%;
+    animation-delay: 6s;
 }
 
-@keyframes float {
+@keyframes subtleFloat {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+    50% { transform: translateY(-10px) rotate(90deg); }
 }
 
 .hero-image-container {
@@ -428,14 +429,15 @@ h1, h2, h3, h4, h5, h6 {
 .section-badge {
     display: inline-flex;
     align-items: center;
-    padding: 8px 16px;
-    background: rgba(157, 63, 252, 0.1);
+    padding: 6px 16px;
+    background: rgba(157, 63, 252, 0.08);
     color: var(--primary-color);
-    border-radius: 20px;
-    font-size: 14px;
+    border-radius: 16px;
+    font-size: 13px;
     font-weight: 600;
     margin-bottom: 24px;
-    border: 1px solid rgba(157, 63, 252, 0.2);
+    border: 1px solid rgba(157, 63, 252, 0.15);
+    letter-spacing: 0.3px;
 }
 
 .section-header h2 {
@@ -488,8 +490,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .feature-item:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
     border-color: var(--primary-color);
 }
 
@@ -686,8 +688,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
     border-color: var(--primary-color);
 }
 
@@ -703,7 +705,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-card.highlight::after {
-    content: '🏸 明星产品';
+    content: '明星产品';
     position: absolute;
     top: -12px;
     right: 20px;
@@ -909,8 +911,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .layer:hover {
     border-color: var(--primary-color);
-    transform: translateX(8px);
-    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+    box-shadow: var(--shadow-sm);
 }
 
 .application-layer {
@@ -1490,18 +1492,36 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Animation Classes */
 .animate-in {
-    animation: fadeInUp 0.6s ease-out;
+    animation: fadeInUp 0.4s ease-out;
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Professional Subtle Animations */
+.feature-item,
+.product-card,
+.achievement-item {
+    transition: all 0.2s ease;
+}
+
+.feature-item:hover,
+.product-card:hover,
+.achievement-item:hover {
+    transform: translateY(-2px);
+}
+
+.tech-feature:hover .feature-number {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
 }
 
 /* Smooth scrolling */
