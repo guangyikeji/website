@@ -471,11 +471,313 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
 
-/* Badminton Showcase */
+/* Badminton Showcase - Enhanced Layout */
 .badminton-showcase {
     padding: 120px 0;
     background: var(--bg-white);
     position: relative;
+}
+
+/* Hero Stats Section */
+.product-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.highlight-item {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.05) 0%, rgba(157, 63, 252, 0.05) 100%);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(0, 51, 102, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--purple-gradient);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.highlight-item:hover::before {
+    transform: scaleX(1);
+}
+
+.highlight-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 51, 102, 0.1);
+    border-color: var(--primary-color);
+}
+
+.highlight-number {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.highlight-unit {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.highlight-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Demo Visual Section */
+.demo-container-large {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+}
+
+.demo-image-large {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.demo-overlay-large {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.7) 0%, rgba(157, 63, 252, 0.5) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.demo-container-large:hover .demo-overlay-large {
+    opacity: 1;
+}
+
+.demo-container-large:hover .demo-image-large {
+    transform: scale(1.05);
+}
+
+.tech-badges {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tech-badge {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary-color);
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Features Section */
+.badminton-features-section h3 {
+    font-size: 42px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--primary-color);
+    letter-spacing: -0.01em;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.feature-card {
+    background: white;
+    padding: 40px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--purple-gradient);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 51, 102, 0.1);
+    border-color: var(--primary-color);
+}
+
+.feature-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.feature-icon-pro {
+    font-size: 32px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 51, 102, 0.2);
+}
+
+.feature-header h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.feature-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.feature-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-specs li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-weight: 500;
+    padding-left: 0;
+}
+
+/* Tech Architecture Section */
+.badminton-tech-section {
+    background: linear-gradient(135deg, var(--bg-gray) 0%, #f1f5f9 100%);
+    border-radius: var(--radius-xl);
+    padding: 80px 60px;
+    margin-top: 80px;
+}
+
+.tech-content-badminton {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.tech-details h3 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    letter-spacing: -0.01em;
+}
+
+.tech-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.tech-layer {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.tech-layer:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(0, 51, 102, 0.1);
+    border-color: var(--primary-color);
+}
+
+.tech-layer-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.tech-components {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tech-components span {
+    padding: 8px 16px;
+    background: var(--bg-gray);
+    color: var(--text-secondary);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.tech-components span:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
 .badminton-content {
@@ -1379,12 +1681,24 @@ h1, h2, h3, h4, h5, h6 {
         gap: 32px;
     }
 
-    .badminton-features {
-        grid-template-columns: 1fr;
-    }
-
     .section-header h2 {
         font-size: 48px;
+    }
+
+    /* Badminton responsive */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .tech-content-badminton {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .product-highlights {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 }
 
@@ -1511,6 +1825,51 @@ h1, h2, h3, h4, h5, h6 {
     .mobile-demo {
         padding: 60px 40px;
         gap: 40px;
+    }
+
+    /* Badminton mobile styles */
+    .badminton-tech-section {
+        padding: 60px 40px;
+    }
+
+    .feature-card {
+        padding: 32px 24px;
+    }
+
+    .highlight-item {
+        padding: 32px 16px;
+    }
+
+    .highlight-number {
+        font-size: 36px;
+    }
+
+    .badminton-features-section h3 {
+        font-size: 32px;
+    }
+
+    .tech-details h3 {
+        font-size: 28px;
+    }
+
+    .mobile-app-showcase h3 {
+        font-size: 28px;
+    }
+
+    .feature-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .feature-icon-pro {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .feature-header h4 {
+        font-size: 20px;
     }
 }
 
